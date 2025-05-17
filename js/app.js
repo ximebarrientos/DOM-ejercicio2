@@ -51,4 +51,22 @@ class Persona{
     }
 }
 
+let personaCargada=null;
+function cargarDatosFormulario(e){
+  e.preventDefault();
+  //guardar los datos llenados del formulario
+  const nombre = document.getElementById("nombre").value;
+  const edad = parseInt(document.getElementById("edad").value);
+  const dni = document.getElementById("dni").value;
+  const sexo = document.getElementById("sexo").value;
+  const peso = parseFloat(document.getElementById("peso").value);
+  const altura = parseFloat(document.getElementById("altura").value);
+  const anioNacimiento = parseInt(document.getElementById("anioNacimiento").value)
+
+  //crear objeto persona
+  personaCargada=new Persona(nombre, edad,dni,sexo,peso,altura,anioNacimiento)
+}
+
 //manejador de eventos para el form
+const formulario=document.querySelector("form")
+formulario.addEventListener("submit",cargarDatosFormulario)
