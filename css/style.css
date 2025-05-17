@@ -9,3 +9,13 @@ body{
 main{
     flex-grow: 1;
 }
+
+img{
+    object-fit: contain;
+}
+
+@media all and (width>=768px){
+    #sectionForm{
+        width: 50%;
+    }
+}

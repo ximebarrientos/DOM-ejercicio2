@@ -51,4 +51,4 @@ class Persona{
     }
 }
 
-document.getElementById
+//manejador de eventos para el form
