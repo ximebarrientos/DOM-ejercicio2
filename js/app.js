@@ -70,6 +70,7 @@ function cargarDatosFormulario(e){
 
   //crear objeto persona
   personaCargada=new Persona(nombre, edad,dni,sexo,peso,altura, anioNacimiento)
+  formulario.reset()
 }
 
 //manejador de eventos para el form
