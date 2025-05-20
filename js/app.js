@@ -1,23 +1,25 @@
-class Persona{
-    constructor(nombreParam, edadParam,sexoParam,pesoParam,alturaParam,anioNacimientoParam){
-        this.nombre=nombreParam;
-        this.edad=edadParam;
-        this.dni=dniParam;
-        this.sexo=sexoParam;
-        this.peso=pesoParam;
-        this.altura=alturaParam;
-        this.anioNacimiento=anioNacimientoParam;
-    }
-    mostrarGeneracion(){
-    let generacion=""
-    let rasgo=""
-    if(this.anioNacimiento>=1930 && this.anioNacimiento<=1948){
-        generacion="Silent Generation: Los niños de la posguerra"
-        rasgo="Austeridad"
-    }else if (this.anioNacimiento>=1949 && this.anioNacimiento<=1968){
-        generacion="Baby Boom"
-        rasgo="Ambición"
-    }else if (this.anioNacimiento >= 1969 && this.anioNacimiento <= 1980) {
+class Persona {
+  constructor(nombre, edad, dni, sexo, peso, altura, anioNacimiento) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.dni = dni;
+    this.sexo = sexo;
+    this.peso = peso;
+    this.altura = altura;
+    this.anioNacimiento = anioNacimiento;
+  }
+  mostrarGeneracion() {
+    console.log("Desde mostrar generacion");
+    let generacion = "";
+    let rasgo = "";
+
+    if (this.anioNacimiento >= 1930 && this.anioNacimiento <= 1948) {
+      generacion = "Silent Generation: Los niños de la posguerra";
+      rasgo = "Austeridad";
+    } else if (this.anioNacimiento >= 1949 && this.anioNacimiento <= 1968) {
+      generacion = "Baby Boom";
+      rasgo = "Ambición";
+    } else if (this.anioNacimiento >= 1969 && this.anioNacimiento <= 1980) {
       generacion = "Generación X";
       rasgo = "Obsesión por el éxito";
     } else if (this.anioNacimiento >= 1981 && this.anioNacimiento <= 1993) {
@@ -30,25 +32,87 @@ class Persona{
       generacion = "Desconocida";
       rasgo = "No disponible";
     }
-    console.log(`${this.nombre} pertenece a la ${generacion} y su rasgo característico es ${rasgo}.`)
-    }
+    alert(
+      `${this.nombre} pertenece a la ${generacion} y su rasgo característico es ${rasgo}.`
+    );
+  }
 
-    esMayorDeEdad(){
-        if (this.edad >= 18) {
-      console.log(`${this.nombre} es mayor de edad.`);
+  esMayorDeEdad() {
+    if (this.edad >= 18) {
+      alert(`${this.nombre} es mayor de edad.`);
     } else {
-      console.log(`${this.nombre} NO es mayor de edad.`);
+      alert(`${this.nombre} NO es mayor de edad.`);
     }
-    }
-    mostrarDatos(){
-    console.log(`Nombre: ${this.nombre}`);
-    console.log(`Edad: ${this.edad}`);
-    console.log(`DNI: ${this.dni}`);
-    console.log(`Sexo: ${this.sexo}`);
-    console.log(`Peso: ${this.peso} kg`);
-    console.log(`Altura: ${this.altura} m`);
-    console.log(`Año de nacimiento: ${this.anioNacimiento}`)
-    }
+  }
+  mostrarDatos() {
+    alert(`
+      Nombre: ${this.nombre}
+      Edad: ${this.edad}
+      DNI: ${this.dni}
+      Sexo: ${this.sexo}
+      Peso: ${this.peso} kg
+      Altura: ${this.altura} cm
+      Año de nacimiento: ${this.anioNacimiento}
+    `);
+  }
+}
+//guardar los datos de la persona creada
+let personaCargada = null;
+
+function cargarDatosFormulario(e) {
+  e.preventDefault();
+  //guardar los datos llenados del formulario
+  const nombre = document.getElementById("nombre").value;
+  const edad = parseInt(document.getElementById("edad").value);
+  const dni = document.getElementById("dni").value;
+  const sexo = document.getElementById("sexo");
+  const peso = parseFloat(document.getElementById("peso").value);
+  const altura = parseFloat(document.getElementById("altura").value);
+  const anioNacimiento = parseInt(
+    document.getElementById("anioNacimiento").value
+  );
+
+  //crear objeto persona
+  personaCargada = new Persona(
+    nombre,
+    edad,
+    dni,
+    sexo,
+    peso,
+    altura,
+    anioNacimiento
+  );
+  formulario.reset();
 }
 
-document.getElementById
+//manejador de eventos para el form
+const formulario = document.querySelector("form");
+const btnMostrarGeneracion = document.querySelector(".btn-outline-info");
+const btnMayorDeEdad = document.querySelector(".btn-outline-primary");
+const btnMostrarDatos = document.querySelector(".btn-outline-danger");
+
+formulario.addEventListener("submit", cargarDatosFormulario);
+//manejador de eventos de los botones
+btnMostrarGeneracion.addEventListener("click", function () {
+  if (personaCargada) {
+    personaCargada.mostrarGeneracion();
+  } else {
+    alert("Primero debes crear una persona");
+  }
+});
+
+btnMayorDeEdad.addEventListener("click", function () {
+  if (personaCargada) {
+    personaCargada.esMayorDeEdad();
+  } else {
+    alert("Primero debes crear una persona");
+  }
+});
+
+btnMostrarDatos.addEventListener("click", function () {
+  if (personaCargada) {
+    personaCargada.mostrarDatos();
+  } else {
+    alert("Primero debes crear una persona");
+  }
+});
