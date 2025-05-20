@@ -1,71 +1,141 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Claudia Ximena Barrientos">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Claudia Ximena Barrientos" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Persona</title>
-</head>
-<body>
+  </head>
+  <body>
     <header></header>
     <main class="container">
-        <h1 class="display-6 text-center my-3">Completa el siguiente formulario y descubre cuál es tu generación</h1>
-        <section class="row">
-            <form class="col-12 col-md-6">
-                <div>
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" placeholder="Ej: Juan Pepe" id="nombre" minlength="2" maxlength="100" required class="form-control mb-2">
-                </div>
-                <div>
-                    <label for="edad" class="form-label">Edad:</label>
-                    <input type="number" placeholder="20" id="edad" minlength="1" maxlength="3" required class="form-control mb-2">
-                </div>
-                <div>
-                    <label for="dni" class="form-label">DNI:</label>
-                    <input type="number" placeholder="12345678" id="dni" minlength="7" maxlength="9" required class="form-control mb-2">
-                </div>
-                <div>
-                    <label for="nombre" class="form-label">Sexo:</label>
-                    <select class="form-select" id="selecionSexo">
-                        <option value="M">Masculino</option>
-                        <option value="F">Femenino</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="peso" class="form-label">Peso(kg): </label>
-                    <input type="number" placeholder="60" id="peso" minlength="1" maxlength="3" required class="form-control mb-2">
-                </div>
-                <div>
-                    <label for="altura" class="form-label">Altura(cm): </label>
-                    <input type="number" placeholder="170" id="altura" minlength="1" maxlength="4" required class="form-control mb-2">
-                </div>
-                <div>
-                    <label for="anioNacimiento" class="form-label">Año de Nacimiento: </label>
-                    <input type="number" placeholder="1995" id="anioNacimiento" minlength="4" maxlength="4" required class="form-control mb-2">
-                </div>
-                <button class="btn btn-outline-success" type="submit">Listo</button>
-            </form>
-            <div class="col-12 col-md-6 align-content-center my-3">
-                <img src="./img/rondapersonas.jpg" alt="Imagen de personas de todas las edades" class="w-100">
-            </div>
-        </section>
-        <section>
-            <div>
-                <h2>Persona</h2>
-                <button class="btn btn-outline-info m-1">Mostrar Generacion</button>
-                <button class="btn btn-outline-primary m-1">Mayor de Edad</button>
-                <button class="btn btn-outline-danger m-1">Mostrar Datos</button>
-            </div>
-        </section>
+      <h1 class="display-6 text-center my-3">
+        Completa el siguiente formulario y descubre cuál es tu generación
+      </h1>
+      <section class="row">
+        <form class="col-12 col-md-6">
+          <div>
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input
+              type="text"
+              placeholder="Ej: Juan Pepe"
+              id="nombre"
+              minlength="2"
+              maxlength="100"
+              required
+              class="form-control mb-2"
+            />
+          </div>
+          <div>
+            <label for="edad" class="form-label">Edad:</label>
+            <input
+              type="number"
+              placeholder="20"
+              id="edad"
+              minlength="1"
+              maxlength="3"
+              required
+              class="form-control mb-2"
+            />
+          </div>
+          <div>
+            <label for="dni" class="form-label">DNI:</label>
+            <input
+              type="number"
+              placeholder="12345678"
+              id="dni"
+              minlength="7"
+              maxlength="9"
+              required
+              class="form-control mb-2"
+            />
+          </div>
+          <div>
+            <label for="nombre" class="form-label">Sexo:</label>
+            <select class="form-select" id="selecionSexo">
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </div>
+          <div>
+            <label for="peso" class="form-label">Peso(kg): </label>
+            <input
+              type="number"
+              placeholder="60"
+              id="peso"
+              minlength="1"
+              maxlength="3"
+              required
+              class="form-control mb-2"
+            />
+          </div>
+          <div>
+            <label for="altura" class="form-label">Altura(cm): </label>
+            <input
+              type="number"
+              placeholder="170"
+              id="altura"
+              minlength="1"
+              maxlength="4"
+              required
+              class="form-control mb-2"
+            />
+          </div>
+          <div>
+            <label for="anioNacimiento" class="form-label"
+              >Año de Nacimiento:
+            </label>
+            <input
+              type="number"
+              placeholder="1995"
+              id="anioNacimiento"
+              minlength="4"
+              maxlength="4"
+              required
+              class="form-control mb-2"
+            />
+          </div>
+          <button class="btn btn-outline-success" type="submit">Listo</button>
+        </form>
+        <div class="col-12 col-md-6 align-content-center my-3">
+          <img
+            src="./img/rondapersonas.jpg"
+            alt="Imagen de personas de todas las edades"
+            class="w-100"
+          />
+        </div>
+      </section>
+      <section>
+        <div>
+          <h2>Persona</h2>
+          <button class="btn btn-outline-info m-1">Mostrar Generacion</button>
+          <button class="btn btn-outline-primary m-1">Mayor de Edad</button>
+          <button class="btn btn-outline-danger m-1">Mostrar Datos</button>
+        </div>
+      </section>
     </main>
     <footer class="bg-dark-subtle mt-4">
-        <p class="py-4 text-center">&copy;Todos los derechos reservados- <a href="https://github.com/ximebarrientos">Claudia Ximena Barrientos</a></p>
+      <p class="py-4 text-center">
+        &copy;Todos los derechos reservados-
+        <a href="https://github.com/ximebarrientos"
+          >Claudia Ximena Barrientos</a
+        >
+      </p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/app.js"></script>
-</body>
+  </body>
 </html>
